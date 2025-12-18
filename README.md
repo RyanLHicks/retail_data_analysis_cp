@@ -6,7 +6,6 @@
 
 
 
-!\[Python](https://img.shields.io/badge/Python-3.10%2B-blue) !\[Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-red) !\[SQLite](https://img.shields.io/badge/Data-SQLite-green) !\[Status](https://img.shields.io/badge/Status-Prototype-orange)
 
 
 
@@ -16,7 +15,7 @@
 
 
 
-Unlike static Excel reports, this application provides a live "Control Tower" view of supply chain health. It automates the detection of \*\*Phantom Inventory\*\* (stock that exists in the system but isn't selling) and includes a \*\*Scenario Planning Engine\*\* to model the financial impact of price promotions before they are launched.
+Unlike static Excel reports, this application provides a live "Control Tower" view of supply chain health. It automates the detection of **Phantom Inventory** (stock that exists in the system but isn't selling) and includes a **Scenario Planning Engine** to model the financial impact of price promotions before they are launched.
 
 
 
@@ -163,5 +162,6 @@ JOIN sales\_summary s ON i.store\_id = s.store\_id
 WHERE i.units\_on\_hand > 10 
 
 AND s.total\_units\_sold\_7\_days = 0;
+
 
 
