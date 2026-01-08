@@ -1,167 +1,92 @@
-# 🛒 Retail Pulse: Vendor Control Tower
 
+# Retail Pulse Dashboard
 
+![Main Dashboard](pictures/Screenshot%202026-01-07%20181302.png)
 
-### *AI-Assisted Supply Chain Analytics Platform*
+##  Overview
 
+The Retail Pulse Dashboard is a comprehensive, data-driven command center built with Python and Streamlit. It provides retail managers and analysts with a suite of powerful tools to monitor performance, optimize inventory, and make informed strategic decisions. By connecting directly to a centralized SQL database, this dashboard offers real-time insights into sales, inventory, and merchandising, bridging the gap between raw data and actionable intelligence.
 
-
-
-
-
-## 📄 Executive Summary
-
-**Retail Pulse** is a decision-support system designed for CPG vendors (e.g., Kenvue, Unilever) operating in large-scale retail environments (e.g., Walmart, Target). 
-
-
-
-Unlike static Excel reports, this application provides a live "Control Tower" view of supply chain health. It automates the detection of **Phantom Inventory** (stock that exists in the system but isn't selling) and includes a **Scenario Planning Engine** to model the financial impact of price promotions before they are launched.
-
-
+This project was designed to solve common retail challenges, such as identifying dead stock, planning for promotions, ensuring planogram compliance, and forecasting future demand. It serves as a testament to the power of combining data engineering, analytics, and modern development practices to create a practical, business-oriented solution.
 
 ---
 
+## 🚀 Features
 
+This dashboard is organized into several strategic modules, each designed to address a specific area of retail operations.
 
-## 🚀 Key Technical Features
+### 📉 Liability Manager
+The Liability Manager identifies "dead stock" or orphaned inventory—products that are no longer part of the active assortment but still have units on hand. It calculates the financial liability associated with this dead stock, helping managers prioritize markdowns and clear out unproductive inventory.
 
+![Liability Manager](pictures/Animation.gif)
 
+### 🛠️ Scenario Planner
+This interactive tool allows users to simulate the financial impact of promotional events. By adjusting the price discount and expected sales uplift, managers can project the potential revenue and net impact of a promotion before committing to it. This helps in designing more effective and profitable marketing campaigns.
 
-### 1. Automated ETL Pipeline 🔄
+![Scenario Planner](pictures/Animation1.gif)
 
-**Data Ingestion:** Custom Python scripts (`etl\_pipeline.py`) ingest raw Point-of-Sale (POS) and Inventory CSV files.
+### 📦 Reset Readiness
+The Reset Readiness module is crucial for managing assortment transitions. It monitors the inventory levels of new and incoming products to ensure they are adequately stocked for an upcoming modular reset. The tool flags any items that are at risk of being out-of-stock, preventing lost sales and ensuring a smooth transition.
 
-**Data Warehouse:** Structuring data into a **SQLite** relational database with indexed tables for efficient querying.
+![Reset Readiness](pictures/Animation2.gif)
 
-**Resiliency:** Built-in logic to handle data freshness latency, ensuring only "Last 30 Days" data drives the dashboard.
+### 📏 Planogram Validator
+The Planogram Validator is a merchandising tool that ensures a proposed product assortment will physically fit on the shelf. It compares the total required shelf space (based on product widths and facings) against the available fixture space for a given category. This prevents costly and time-consuming errors in assortment planning.
 
+![Planogram Validator](pictures/Animation3.gif)
 
+### 🔮 AI Forecasting
+Leveraging a machine learning model, the AI Forecasting module predicts future demand for a selected product category. It uses historical sales data to train a linear regression model and projects the next 7 days of sales, along with the expected revenue. This provides a data-driven basis for inventory replenishment and demand planning.
 
-### 2. Scenario Planning Engine 🔮
-
-**"What-If" Analysis:** Interactive tool allowing Category Managers to simulate price cuts.
-
-**Elasticity Modeling:** Calculates projected Revenue by balancing **Price Discount %** against **Volume Uplift %**.
-
-**Real-Time Visualization:** Streamlit widgets provide instant visual feedback (Green/Red indicators) on Net Revenue Impact.
-
-
-
-### 3. Risk \& Anomaly Detection 🛡️
-
-**Phantom Inventory Algorithm:** SQL logic that flags stores/SKUs with `Inventory > 10` but `Sales (7-day) = 0`.
-
-**Defensive Coding:** Python logic implements null-handling to prevent dashboard crashes when SQL queries return empty datasets.
-
-
+![AI Forecasting](pictures/Animation5.gif)
 
 ---
 
+## 🛠️ Technical Skills Showcase
 
+This project was an opportunity to apply a diverse set of technical skills to solve real-world business problems.
 
-## 🤖 The AI-Agentic Workflow
+### 🐍 Python
+Python was the core programming language for this project. Its extensive ecosystem of libraries was instrumental in building the dashboard.
+- **Streamlit:** Used to create the interactive and user-friendly web application interface.
+- **Pandas:** The backbone of the data manipulation and analysis, used for cleaning, transforming, and analyzing the data from the SQL database.
+- **Scikit-learn:** Employed to build the linear regression model for the AI Demand Forecasting feature.
+- **SQLAlchemy:** Used to create a robust and efficient connection to the SQLite database.
 
-This project was developed using an **"Agent-in-the-Loop"** methodology, demonstrating how AI can accelerate software development while maintaining human architectural oversight.
+### 📊 SQL
+The entire dashboard is powered by a SQLite database. SQL queries were used to efficiently extract, aggregate, and filter the data needed for the various modules. This project demonstrates the ability to write clean, performant SQL queries to retrieve data from a relational database and to model data in a way that supports business analytics.
 
+### 📈 Excel
+While the dashboard itself is built in Python, the project required skills often associated with advanced Excel usage. The data was initially explored and modeled in a way that is familiar to business users who rely on Excel for their day-to-day work. The concepts of data aggregation, scenario planning, and metric calculation are all directly transferable from an advanced Excel skillset. This project essentially automates and scales the kind of analysis that is often done manually in spreadsheets.
 
-
-***Human Role (Lead Architect):** Defined the business requirements (OTIF, WOS), debugged logic errors (such as data freshness bugs), and designed the UI/UX.
-
-***AI Agent Role (Code Puppy):** Executed boilerplate code generation, optimized SQL syntax, and assisted in refactoring Python scripts for error handling.
-
-***Outcome:** Reduced development lifecycle by ~60% compared to traditional coding methods.
-
-
-
----
-
-
-
-## 🛠️ Installation \& Usage
-
-
-
-**Prerequisites:** Python 3.8+
-
-
-
-1. **Clone the Repository**
-
-&nbsp;   ```bash
-
-&nbsp;   git clone \[https://github.com/YOUR\_USERNAME/retail-pulse-dashboard.git](https://github.com/YOUR\_USERNAME/retail-pulse-dashboard.git)
-
-&nbsp;   cd retail-pulse-dashboard
-
-&nbsp;   ```
-
-
-
-2. **Install Dependencies**
-
-&nbsp;   ```bash
-
-&nbsp;   pip install pandas streamlit faker
-
-&nbsp;   ```
-
-
-
-3.  **Initialize Data & Database**
-
-&nbsp;   ```bash
-
-&nbsp;   # Generate fresh mock data (Last 30 Days)
-
-&nbsp;   python src/generate\_data.py
-
-&nbsp;   
-
-&nbsp;   # Load data into SQLite
-
-&nbsp;   python src/etl\_pipeline.py
-
-&nbsp;   ```
-
-
-
-4.  **Launch the Dashboard**
-
-&nbsp;   ```bash
-
-&nbsp;   streamlit run src/dashboard.py
-
-&nbsp;   ```
-
-
+### 💻 IDE (Integrated Development Environment)
+The development of this project was done within a professional IDE (like VS Code). This allowed for efficient code writing, debugging, and version control. The use of an IDE was crucial for managing the project's structure, dependencies, and for ensuring a high standard of code quality. It demonstrates the ability to work in a modern development environment and to follow software engineering best practices.
 
 ---
 
+## 🏃‍♀️ How to Run
 
+To run the Retail Pulse Dashboard on your local machine, please follow these steps:
 
-## 📊 Sample SQL Logic
+**Prerequisites:**
+- Python 3.8+
+- Pip (Python package installer)
 
-*Snippet of the logic used to detect "Phantom Inventory":*
+**1. Clone the repository:**
+```bash
+git clone <repository-url>
+cd <repository-directory>
+```
 
+**2. Install the required packages:**
+```bash
+pip install -r requirements.txt
+```
+*(Note: You may need to create a `requirements.txt` file if one is not already present. Based on the `dashboard.py` script, the required libraries are `streamlit`, `pandas`, `sqlalchemy`, `altair`, `scikit-learn`, and `plotly`.)*
 
+**3. Run the Streamlit application:**
+```bash
+streamlit run code/dashboard.py
+```
 
-```sql
-
-SELECT 
-
-&nbsp;   s.store\_id, 
-
-&nbsp;   p.product\_name, 
-
-&nbsp;   i.units\_on\_hand 
-
-FROM inventory i
-
-JOIN sales\_summary s ON i.store\_id = s.store\_id
-
-WHERE i.units\_on\_hand > 10 
-
-AND s.total\_units\_sold\_7\_days = 0;
-
-
-
+The application should now be open in your web browser!
