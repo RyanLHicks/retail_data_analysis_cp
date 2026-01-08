@@ -1,0 +1,51 @@
+product_id,product_name,category,brand,supplier_id,unit_cost
+1001,Eye Apparel Item,Apparel,BrandB,5,37.59
+1002,Almost Book Item,Books,BrandD,10,68.44
+1003,Culture Home Good Item,Home Goods,BrandB,4,54.56
+1004,Here Book Item,Books,BrandE,6,64.04
+1005,Get Book Item,Books,BrandA,4,52.5
+1006,Involve Home Good Item,Home Goods,BrandB,9,42.81
+1007,Score Electronic Item,Electronics,BrandD,4,11.8
+1008,Institution Book Item,Books,BrandA,10,13.69
+1009,Owner Electronic Item,Electronics,BrandD,5,12.98
+1010,Success Home Good Item,Home Goods,BrandB,9,10.75
+1011,Production Apparel Item,Apparel,BrandA,6,58.59
+1012,Option Electronic Item,Electronics,BrandB,7,54.12
+1013,Democratic Electronic Item,Electronics,BrandB,4,43.84
+1014,Quality Book Item,Books,BrandB,4,16.03
+1015,Organization Beauty Item,Beauty,BrandD,8,84.21
+1016,Difficult Apparel Item,Apparel,BrandD,2,52.79
+1017,Find Apparel Item,Apparel,BrandD,5,59.55
+1018,Perform Home Good Item,Home Goods,BrandC,8,21.95
+1019,Enjoy Sport Item,Sports,BrandA,6,56.42
+1020,Short Grocerie Item,Groceries,BrandA,10,82.9
+1021,Central Sport Item,Sports,BrandB,7,40.46
+1022,Growth Book Item,Books,BrandA,4,48.76
+1023,Pattern Book Item,Books,BrandB,1,93.67
+1024,Number Book Item,Books,BrandD,9,71.19
+1025,Sound Home Good Item,Home Goods,BrandC,1,43.35
+1026,Who Electronic Item,Electronics,BrandD,8,21.47
+1027,Cup Grocerie Item,Groceries,BrandE,6,40.65
+1028,About Beauty Item,Beauty,BrandD,1,26.46
+1029,Reach Electronic Item,Electronics,BrandE,5,6.44
+1030,Past Electronic Item,Electronics,BrandD,2,13.31
+1031,Soon Electronic Item,Electronics,BrandD,4,99.06
+1032,Attorney Apparel Item,Apparel,BrandC,4,76.76
+1033,Wear Grocerie Item,Groceries,BrandE,6,22.13
+1034,Government Electronic Item,Electronics,BrandE,8,88.27
+1035,Girl Sport Item,Sports,BrandA,4,78.99
+1036,Yourself Sport Item,Sports,BrandD,1,44.06
+1037,Sort Grocerie Item,Groceries,BrandA,1,74.34
+1038,Heavy Apparel Item,Apparel,BrandE,2,39.0
+1039,Listen Apparel Item,Apparel,BrandE,10,30.97
+1040,Past Home Good Item,Home Goods,BrandD,4,64.95
+1041,Why Beauty Item,Beauty,BrandA,5,73.32
+1042,Trial Book Item,Books,BrandB,2,20.87
+1043,Lawyer Book Item,Books,BrandC,7,78.77
+1044,Theory Beauty Item,Beauty,BrandA,1,63.97
+1045,Summer Home Good Item,Home Goods,BrandA,5,33.95
+1046,List Grocerie Item,Groceries,BrandD,9,6.8
+1047,Explain Grocerie Item,Groceries,BrandB,7,5.48
+1048,First Electronic Item,Electronics,BrandD,2,54.79
+1049,Still Electronic Item,Electronics,BrandD,3,56.99
+1050,Soldier Sport Item,Sports,BrandA,3,62.41
