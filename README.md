@@ -70,30 +70,20 @@ The development of this project was done within a professional IDE (like VS Code
 
 ---
 
-## 🏃‍♀️ How to Run
+## 💡 Problem Solving & Commercial Awareness
 
-To run the Retail Pulse Dashboard on your local machine, please follow these steps:
+This section details specific challenges encountered during development and how they were resolved, showcasing a blend of technical problem-solving and business acumen.
 
-**Prerequisites:**
-- Python 3.8+
-- Pip (Python package installer)
+### Scenario 1: Diagnosing a Data Latency Issue
 
-**1. Clone the repository:**
-```bash
-git clone <repository-url>
-cd <repository-directory>
-```
+**The Problem** Faced significant development issues and data misalignment. During the development of the Retail Pulse dashboard, I encountered a discrepancy where the frontend metrics showed zero despite the backend logic being correct.
 
-**2. Install the required packages:**
-```bash
-pip install -r requirements.txt
-```
-*(Note: You may need to create a `requirements.txt` file if one is not already present. Based on the `dashboard.py` script, the required libraries are `streamlit`, `pandas`, `sqlalchemy`, `altair`, `scikit-learn`, and `plotly`.)*
+**The Solution:**  After investigating, I diagnosed the issue as a data latency in the ETL pipeline. The data generation script wasn't creating records within the dashboard's 'Last 30 Days' temporal window. To fix this, I re-designed the script to enforce strict, rolling time windows, ensuring the dashboard always reflected a real-time, decision-making scenario.
 
-**3. Run the Streamlit application:**
-```bash
-streamlit run code/dashboard.py
-```
+### Scenario 2: Handling Unexpected Database Outputs
 
-The application should now be open in your web browser!
+**The Problem:** I encountered a runtime error where a SQL aggregation was returning NULL for products with no recent sales, which subsequently crashed the dashboard.
+
+**The Solution:** To resolve this, I implemented defensive coding logic in the Python backend. This logic cleans the database outputs by converting any NULL values to zero integers *before* they are passed to the frontend for processing, making the application more robust and resilient to intermittent data gaps.
+
 
