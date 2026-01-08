@@ -1,7 +1,8 @@
 
 # Retail Pulse Dashboard
 
-![Main Dashboard](pictures/Screenshot%202026-01-07%20181302.png)
+<img width="2553" height="1259" alt="Screenshot 2026-01-07 181302" src="https://github.com/user-attachments/assets/d56c3205-8cce-4efe-9fd0-6c9160f4fdc5" />
+
 
 ##  Overview
 
@@ -18,27 +19,32 @@ This dashboard is organized into several strategic modules, each designed to add
 ### 📉 Liability Manager
 The Liability Manager identifies "dead stock" or orphaned inventory—products that are no longer part of the active assortment but still have units on hand. It calculates the financial liability associated with this dead stock, helping managers prioritize markdowns and clear out unproductive inventory.
 
-![Liability Manager](pictures/Animation.gif)
+![Animation](https://github.com/user-attachments/assets/ad75327c-c8dc-4a27-84ae-009ecfba06d0)
+
 
 ### 🛠️ Scenario Planner
 This interactive tool allows users to simulate the financial impact of promotional events. By adjusting the price discount and expected sales uplift, managers can project the potential revenue and net impact of a promotion before committing to it. This helps in designing more effective and profitable marketing campaigns.
 
-![Scenario Planner](pictures/Animation1.gif)
+![Animation1](https://github.com/user-attachments/assets/54e83bcf-1cd9-48fb-9917-0ee13ec706af)
+
 
 ### 📦 Reset Readiness
 The Reset Readiness module is crucial for managing assortment transitions. It monitors the inventory levels of new and incoming products to ensure they are adequately stocked for an upcoming modular reset. The tool flags any items that are at risk of being out-of-stock, preventing lost sales and ensuring a smooth transition.
 
-![Reset Readiness](pictures/Animation2.gif)
+![Animation2](https://github.com/user-attachments/assets/ca205906-9cf5-46ad-ab08-b7612062c9cf)
+
 
 ### 📏 Planogram Validator
 The Planogram Validator is a merchandising tool that ensures a proposed product assortment will physically fit on the shelf. It compares the total required shelf space (based on product widths and facings) against the available fixture space for a given category. This prevents costly and time-consuming errors in assortment planning.
 
-![Planogram Validator](pictures/Animation3.gif)
+![Animation3](https://github.com/user-attachments/assets/83c7e096-c174-499f-8b63-2ca9afe08b0a)
+
 
 ### 🔮 AI Forecasting
 Leveraging a machine learning model, the AI Forecasting module predicts future demand for a selected product category. It uses historical sales data to train a linear regression model and projects the next 7 days of sales, along with the expected revenue. This provides a data-driven basis for inventory replenishment and demand planning.
 
-![AI Forecasting](pictures/Animation5.gif)
+![Animation5](https://github.com/user-attachments/assets/d1eba675-4e9a-46da-a8f5-db34e6631678)
+
 
 ---
 
@@ -90,3 +96,4 @@ streamlit run code/dashboard.py
 ```
 
 The application should now be open in your web browser!
+
